@@ -11,28 +11,26 @@ public class AssociationTable
     {
         literki = new HashMap<>();
 
-        for (int i = 0; i < keyboard.length; i++)
+        for (String s : keyboard)
         {
-            for (int j = 0; j < keyboard[i].length(); j++)
+            for (int j = 0; j < s.length(); j++)
             {
                 if (j == 0)
                 {
                     LinkedHashSet<Character> set = new LinkedHashSet<>();
-                    set.add(keyboard[i].charAt(j+1));
-                    literki.put(String.valueOf(keyboard[i].charAt(j)), set);
-                                    }
-                else if (j == keyboard[i].length() - 1)
+                    set.add(s.charAt(j + 1));
+                    literki.put(String.valueOf(s.charAt(j)), set);
+                } else if (j == s.length() - 1)
                 {
                     LinkedHashSet<Character> set = new LinkedHashSet<>();
-                    set.add(keyboard[i].charAt(j-1));
-                    literki.put(String.valueOf(keyboard[i].charAt(j)), set);
-                }
-                else
+                    set.add(s.charAt(j - 1));
+                    literki.put(String.valueOf(s.charAt(j)), set);
+                } else
                 {
                     LinkedHashSet<Character> set = new LinkedHashSet<>();
-                    set.add(keyboard[i].charAt(j-1));
-                    set.add(keyboard[i].charAt(j+1));
-                    literki.put(String.valueOf(keyboard[i].charAt(j)), set);
+                    set.add(s.charAt(j - 1));
+                    set.add(s.charAt(j + 1));
+                    literki.put(String.valueOf(s.charAt(j)), set);
                 }
             }
         }
