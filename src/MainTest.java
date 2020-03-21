@@ -1,17 +1,14 @@
 import org.junit.jupiter.api.Assertions;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
     @org.junit.jupiter.api.Test
     void stringValidatePositiveTest()
     {
         String x = "przyklad";
-        Assertions.assertEquals(true, Main.stringValidate(x));
+        Assertions.assertTrue(Main.stringValidate(x));
         x = "przyk0ad";
-        Assertions.assertEquals(false, Main.stringValidate(x));
-
+        Assertions.assertFalse(Main.stringValidate(x));
     }
 
     @org.junit.jupiter.api.Test

@@ -8,12 +8,12 @@ public class Main
         Scanner scan = new Scanner(System.in);
         System.out.println("Daj pierwsze slowo: ");
         s1 = scan.nextLine();
-        if (stringValidate(s1) == false)
+        if (!stringValidate(s1))
             throw new InvalidExpressionException();
 
         System.out.println("Daj drugie slowo: ");
         s2 = scan.nextLine();
-        if (stringValidate(s2) == false)
+        if (!stringValidate(s2))
             throw new InvalidExpressionException();
 
         double output;
@@ -26,7 +26,7 @@ public class Main
     {
         for (int i = 0; i < str.length(); i++)
         {
-            if (Character.isAlphabetic(str.charAt(i)) == false || Character.isUpperCase(str.charAt(i)) == true)
+            if (!Character.isAlphabetic(str.charAt(i)) || Character.isUpperCase(str.charAt(i)))
                 return false;
         }
 
